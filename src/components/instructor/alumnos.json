@@ -1,0 +1,94 @@
+{
+  "alumnos": [
+    {
+      "id": 1,
+      "nombre": "Ricardo",
+      "apellido": "Telleria",
+      "dni": "35421789",
+      "rango": "Cabo",
+      "unidad": "Destacamento Naval 1",
+      "fuerza": "armada",
+      "email": "ricardo.telleria@mail.com",
+      "fechaNacimiento": "1995-03-15",
+      "especialidad": "Infantería",
+      "fotoPerfil": "/assets/imgProfile/ricardo_telleria.png",
+      "ultimaEvaluacion": {
+        "fecha": "15/11/2024",
+        "situacion": "Condición N° 6",
+        "arma": "Fusil"
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Hugo",
+      "apellido": "Arboleas",
+      "dni": "38654321",
+      "rango": "Marinero",
+      "unidad": "Fragata Libertad",
+      "fuerza": "armada",
+      "email": "hugo.arboleas@mail.com",
+      "fechaNacimiento": "1998-07-22",
+      "especialidad": "Médico",
+      "fotoPerfil": "/assets/imgProfile/hugo_arboleas.png",
+      "ultimaEvaluacion": {
+        "fecha": "10/12/2024",
+        "situacion": "Condición N° 3",
+        "arma": "Pistola"
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Federico",
+      "apellido": "Gimenez",
+      "dni": "34789456",
+      "rango": "Cabo Principal",
+      "unidad": "Base Naval Puerto Belgrano",
+      "fuerza": "armada",
+      "email": "federico.gimenez@mail.com",
+      "fechaNacimiento": "1993-11-08",
+      "especialidad": "Electricista",
+      "fotoPerfil": "/assets/imgProfile/federico_gimenez.png",
+      "ultimaEvaluacion": {
+        "fecha": "05/01/2025",
+        "situacion": "Condición N° 2",
+        "arma": "Fusil"
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "Ignacio",
+      "apellido": "Tarscitano",
+      "dni": "39123654",
+      "rango": "Marinero",
+      "unidad": "Destacamento Naval 2",
+      "fuerza": "armada",
+      "email": "ignacio.tarscitano@mail.com",
+      "fechaNacimiento": "1999-02-14",
+      "especialidad": "Comunicaciones",
+      "fotoPerfil": "/assets/imgProfile/ignacio_tarscitano.png",
+      "ultimaEvaluacion": {
+        "fecha": "20/12/2024",
+        "situacion": "Condición N° 4",
+        "arma": "Pistola"
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "Claudia",
+      "apellido": "Cardoso",
+      "dni": "36987123",
+      "rango": "Suboficial Segundo",
+      "unidad": "Comando de la Flota de Mar",
+      "fuerza": "armada",
+      "email": "claudia.cardoso@mail.com",
+      "fechaNacimiento": "1992-09-30",
+      "especialidad": "Logística",
+      "fotoPerfil": "/assets/imgProfile/claudia_cardoso.png",
+      "ultimaEvaluacion": {
+        "fecha": "28/12/2024",
+        "situacion": "Condición N° 1",
+        "arma": "Fusil"
+      }
+    }
+  ]
+}

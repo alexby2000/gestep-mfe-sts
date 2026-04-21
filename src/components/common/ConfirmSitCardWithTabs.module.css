@@ -1,0 +1,948 @@
+/* ============================================
+   DRAWER CON PESTAÑAS - ESTILOS
+   ============================================ */
+
+/* Overlay */
+.drawerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.drawerOverlay.fadeOut {
+  animation: fadeOut 0.3s ease;
+}
+
+/* Drawer */
+.drawer {
+  position: fixed;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  width: 420px;
+  height: calc(100vh - 4rem);
+  max-height: calc(100vh - 4rem);
+  max-width: calc(100vw - 4rem);
+  background: var(--color-bg-primary);
+  border-radius: 1rem;
+  box-shadow: 
+    -4px 0 24px rgba(0, 0, 0, 0.5),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 1002;
+  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.drawer.slideOut {
+  animation: slideOut 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Botón cerrar */
+.drawerCloseButton {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.drawerCloseButton:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* Container principal con tabs */
+.drawerContainer {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1rem;
+  background: var(--color-bg-primary);
+  z-index: 5;
+}
+
+/* Tab Bar - Lado izquierdo fuera del drawer */
+.tabBar {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tabButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding: 0.5rem 0.3rem;
+  width: 15px;
+  min-height: 80px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-right: none;
+  border-radius: 0.5rem 0 0 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.65rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: -1px;
+  overflow: visible;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tabButtonWrapper {
+  position: relative;
+  width: 60px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabButtonHoverArea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: transparent;
+  pointer-events: none;
+}
+
+.tabButton:hover {
+  /* Aplica el hover visual al botón cuando el área extendida es hover */
+  filter: brightness(1.08) drop-shadow(0 0 8px #3b82f6cc);
+}
+
+.tabButton.active {
+  opacity: 1;
+  pointer-events: auto;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  box-shadow: 
+    -3px 0 12px rgba(59, 130, 246, 0.5),
+    0 0 20px rgba(59, 130, 246, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  clip-path: polygon(
+    0 50%,
+    15px 0,
+    100% 0,
+    100% 100%,
+    15px 100%
+  );
+  width: 60px;
+  min-height: 40px;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: initial;
+}
+
+.tabButton.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.tabButton.active svg {
+  opacity: 1;
+  width: 18px;
+  height: 18px;
+  transform: rotate(0deg);
+  margin: 0;
+  background: transparent;
+}
+
+.tabButton.active span {
+  opacity: 0;
+  display: none;
+}
+
+.tabButton svg {
+  opacity: 0;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-bottom: 0.3rem;
+  transform: rotate(-90deg);
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.tabButton span {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.tabButton:first-child {
+  border-top-left-radius: 0.5rem;
+  margin-bottom: -1px;
+}
+
+.tabButton:last-child {
+  border-bottom-left-radius: 0.5rem;
+  margin-bottom: 0;
+}
+
+.tabButton svg {
+  writing-mode: initial;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-bottom: 0.35rem;
+  transform: rotate(90deg);
+}
+
+/* Mostrar todos los tabs al hacer hover sobre el tabBar */
+.tabBar:hover .tabButton {
+  opacity: 1;
+  pointer-events: auto;
+  width: 48px;
+  min-height: 125px;
+  padding: 1rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  border-right: 1px solid var(--color-border);
+  margin-bottom: 0;
+  box-shadow: -3px 0 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(to right, var(--color-bg-tertiary) 0%, var(--color-bg-secondary) 100%);
+}
+
+.tabBar:hover .tabButton svg {
+  opacity: 1;
+  width: 18px;
+  height: 18px;
+}
+
+.tabBar:hover .tabButton span {
+  opacity: 1;
+}
+
+/* Hover individual cuando está expandido - solo cambia color, no posición */
+.tabBar:hover .tabButton:hover {
+  background: linear-gradient(to right, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  color: var(--color-text-primary);
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Activo cuando está en hover (expandido) */
+.tabBar:hover .tabButton.active {
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.3) 0%, var(--color-bg-primary) 100%);
+  color: #3b82f6;
+  box-shadow: 
+    -4px 0 16px rgba(59, 130, 246, 0.4),
+    inset 2px 0 10px rgba(59, 130, 246, 0.15);
+  clip-path: none;
+  width: 48px;
+  border: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+}
+
+.tabBar:hover .tabButton.active svg {
+  opacity: 1;
+}
+
+.tabBar:hover .tabButton.active span {
+  opacity: 1;
+}
+
+/* Contenido de las pestañas */
+.tabContent {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+  width: 100%;
+  scrollbar-width: none;
+  position: relative;
+}
+
+.tabContent::-webkit-scrollbar {
+  display: none;
+}
+
+.tabPane {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.tabPaneActive {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  animation: fadeInContent 0.2s ease;
+}
+
+.tabPaneHidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Header de cada pestaña */
+.tabHeader {
+  padding: 1rem 1.25rem 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
+  flex-shrink: 0;
+}
+
+.tabTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.tabSubtitle {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+/* ============================================
+   PESTAÑA HABILIDADES
+   ============================================ */
+
+.skillsList {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.skillItem {
+  display: flex;
+  gap: 0.875rem;
+  padding: 1.125rem;
+  background: var(--color-bg-secondary);
+  border-radius: 0.75rem;
+  border: 1.5px solid var(--color-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skillItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(59, 130, 246, 0.5), rgba(59, 130, 246, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skillItem:hover::before {
+  opacity: 1;
+}
+
+.skillItem:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 
+    0 8px 20px rgba(59, 130, 246, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px) translateX(4px);
+  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, rgba(59, 130, 246, 0.03) 100%);
+}
+
+.skillItemGold {
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.12) 0%, rgba(245, 158, 11, 0.08) 100%);
+  border-color: rgba(251, 191, 36, 0.4);
+  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.1);
+}
+
+.skillItemGold::before {
+  background: linear-gradient(to bottom, rgba(251, 191, 36, 0.7), rgba(245, 158, 11, 0.3));
+}
+
+.skillItemGold:hover {
+  border-color: rgba(251, 191, 36, 0.6);
+  box-shadow: 
+    0 8px 24px rgba(251, 191, 36, 0.25),
+    0 2px 10px rgba(245, 158, 11, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(245, 158, 11, 0.1) 100%);
+}
+
+.skillIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 0.625rem;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.skillIcon::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0.625rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skillItem:hover .skillIcon {
+  transform: scale(1.15);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+}
+
+.skillItem:hover .skillIcon::after {
+  opacity: 1;
+}
+
+/* Variantes de colores para insignias de habilidades */
+.skillIconBlue {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.skillIconGreen {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.skillIconPurple {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+}
+
+.skillIconOrange {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+
+.skillIconRed {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+.skillIconYellow {
+  background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.25);
+}
+
+.skillIconPink {
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.25);
+}
+
+.skillIconTeal {
+  background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+  box-shadow: 0 4px 12px rgba(20, 184, 166, 0.25);
+}
+
+.skillIconGold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  box-shadow: 0 6px 16px rgba(251, 191, 36, 0.4);
+}
+
+.skillIcon svg {
+  width: 20px;
+  height: 20px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.skillText {
+  flex: 1;
+}
+
+.skillTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
+}
+
+.skillDescription {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+/* ============================================
+   PESTAÑA BLANCOS
+   ============================================ */
+
+.targetsList {
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+  gap: 1rem;
+}
+
+.targetItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: var(--color-bg-secondary);
+  border-radius: 0.75rem;
+  border: 1.5px solid var(--color-border);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  will-change: transform, box-shadow;
+}
+
+.targetItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.targetItem:hover::before {
+  opacity: 1;
+}
+
+.targetItem:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 
+    0 12px 24px rgba(59, 130, 246, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(59, 130, 246, 0.04);
+}
+
+.targetImage {
+  width: 100%;
+  aspect-ratio: 1;
+  background: transparent;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  margin-bottom: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-border);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.targetImage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(59, 130, 246, 0.08);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  will-change: opacity;
+}
+
+.targetItem:hover .targetImage {
+  border-color: rgba(59, 130, 246, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.targetItem:hover .targetImage::after {
+  opacity: 1;
+}
+
+.targetImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.targetItem:hover .targetImage img {
+  transform: scale(1.1);
+}
+
+.targetName {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  text-align: center;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease;
+}
+
+.targetItem:hover .targetName {
+  color: #3b82f6;
+}
+
+/* Skeleton loader para imágenes */
+.imageSkeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(148, 163, 184, 0.05) 0%, rgba(203, 213, 225, 0.08) 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.skeletonPulse {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(148, 163, 184, 0.15) 50%,
+    transparent 100%
+  );
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonPulse {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Estados de carga de imagen */
+.imageLoading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.imageLoaded {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeInImage 0.4s ease;
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estado de error */
+.imageError {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(220, 38, 38, 0.08) 100%);
+  border-radius: 12px;
+  color: #ef4444;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.imageError svg {
+  opacity: 0.6;
+}
+
+/* ============================================
+   PESTAÑA CONDICIONES
+   ============================================ */
+
+.lockedState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+  flex: 1;
+}
+
+.lockIcon {
+  width: 64px;
+  height: 64px;
+  background: var(--color-bg-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  color: var(--color-text-secondary);
+  border: 2px solid var(--color-border);
+}
+
+.lockIcon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.lockedTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.lockedDescription {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+.conditionsList {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.conditionItem {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--color-bg-secondary);
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+  align-items: flex-start;
+  transition: all 0.2s ease;
+}
+
+.conditionItem:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+}
+
+.conditionNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 50%;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.conditionText {
+  flex: 1;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  padding-top: 0.15rem;
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%) translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%) translateY(-50%);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseArrow {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-8px);
+    opacity: 0.7;
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .drawer {
+    width: 90%;
+  }
+  
+  .tabBar {
+    left: -42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .drawer {
+    width: 100%;
+    max-width: none;
+    right: 0;
+    border-radius: 0;
+  }
+  
+  .tabBar {
+    left: -38px;
+    gap: 0.35rem;
+  }
+  
+  .tabButton {
+    padding: 0.75rem 0.4rem;
+    min-height: 70px;
+    font-size: 0.65rem;
+  }
+  
+  .tabButton svg {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .tabHeader {
+    padding: 0.875rem 1rem 0.625rem 1rem;
+  }
+  
+  .tabTitle {
+    font-size: 0.925rem;
+  }
+  
+  .skillsList,
+  .targetsList,
+  .conditionsList {
+    padding: 1rem;
+  }
+  
+  .targetsList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

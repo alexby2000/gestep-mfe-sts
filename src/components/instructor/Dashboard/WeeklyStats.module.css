@@ -1,0 +1,270 @@
+/* Container principal */
+.container {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 1.5rem 0;
+}
+
+/* Grid de estadísticas */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Tarjeta individual */
+.statCard {
+  background: var(--color-card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 var(--color-shadow), 0 1px 2px 0 var(--color-shadow);
+  border: 1px solid var(--color-card-border);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.statCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px -10px var(--color-shadow-lg), 0 10px 20px -5px var(--color-shadow);
+  border-color: var(--color-border);
+  z-index: 10;
+}
+
+/* Header de la tarjeta */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.iconWrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.statCard:hover .iconWrapper {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.statCard:hover .icon {
+  transform: scale(1.15);
+}
+
+.change {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  padding: 0.25rem 0.625rem;
+  background-color: #f0fdf4;
+  border-radius: 0.375rem;
+}
+
+[data-theme="dark"] .change {
+  background-color: rgba(16, 185, 129, 0.15);
+}
+
+.changeTrend {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Sección del valor */
+.valueSection {
+  margin-bottom: 1.25rem;
+}
+
+.value {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.375rem;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.statCard:hover .value {
+  transform: scale(1.05);
+  color: var(--color-text-primary);
+}
+
+.unit {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-transform: lowercase;
+}
+
+.statTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  margin-bottom: 0.125rem;
+}
+
+.statSubtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+}
+
+/* Container del mini gráfico */
+.chartContainer {
+  margin: 1rem 0;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.statCard:hover .chartContainer {
+  opacity: 1;
+}
+
+/* Eje personalizado de días */
+.customAxis {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.375rem 0.25rem 0 0.25rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.customAxisVisible {
+  opacity: 1;
+}
+
+.axisLabel {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.customAxisVisible .axisLabel {
+  opacity: 0.8;
+  transform: translateX(0);
+}
+
+/* Tooltip del gráfico */
+.chartTooltip {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.375rem 0.625rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tooltipValue {
+  color: white;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+}
+
+/* Sección de progreso */
+.progressSection {
+  position: relative;
+  z-index: 1;
+}
+
+.progressBar {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #f3f4f6;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.progressGlow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.progressLabel {
+  font-size: var(--font-size-xs);
+  color: #6b7280;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Decoración de fondo */
+.cardDecoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .value {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (min-width: 1280px) {
+  .statsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

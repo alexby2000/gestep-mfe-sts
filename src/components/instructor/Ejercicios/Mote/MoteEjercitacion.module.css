@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.title {
+  display: none;
+}
+
+.placeholder {
+  background-color: var(--color-card-bg);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 var(--color-shadow);
+  padding: 3rem;
+  text-align: center;
+  border: 2px dashed var(--color-border);
+}
+
+.placeholder p {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  margin: 0;
+}

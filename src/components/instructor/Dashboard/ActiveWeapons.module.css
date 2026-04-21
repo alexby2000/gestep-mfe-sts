@@ -1,0 +1,284 @@
+.card {
+  background-color: var(--color-card-bg);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px var(--color-shadow);
+  padding: 1.25rem;
+  border: 2px solid var(--color-card-border);
+  max-width: 32rem;
+  height: fit-content;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.iconWrapper {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.headerIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+
+.headerText {
+  flex: 1;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-top: 0.125rem;
+}
+
+.connectionIndicator {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Empty States */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+}
+
+.emptyIconWrapperGray {
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.emptyIconWrapperBlue {
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.emptyIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #9ca3af;
+}
+
+.emptyIconWrapperBlue .emptyIcon {
+  color: #3b82f6;
+}
+
+.emptyTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: #374151;
+}
+
+.emptyDescription {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* Weapons List */
+.weaponsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 25rem;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.weaponsList::-webkit-scrollbar {
+  width: 0.375rem;
+}
+
+.weaponsList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.weaponsList::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 0.1875rem;
+}
+
+.weaponsList::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Weapon Card */
+.weaponCard {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.weaponCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
+}
+
+.weaponIconContainer {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+}
+
+.weaponIconSvg {
+  width: 2rem;
+  height: 2rem;
+  color: white;
+}
+
+.weaponInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.weaponName {
+  margin: 0 0 0.25rem 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.weaponType {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  color: #6b7280;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Battery */
+.batteryContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.batteryIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.batteryGreen {
+  color: #10b981;
+}
+
+.batteryAmber {
+  color: #f59e0b;
+}
+
+.batteryRed {
+  color: #ef4444;
+}
+
+.batteryPercentage {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: #1f2937;
+  font-family: monospace;
+  min-width: 2.625rem;
+}
+
+.batteryLowText {
+  color: #ef4444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .weaponCard {
+    padding: 0.875rem;
+    gap: 0.75rem;
+  }
+
+  .weaponIconContainer {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .weaponIconSvg {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}

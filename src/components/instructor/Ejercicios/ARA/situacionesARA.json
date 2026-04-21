@@ -1,0 +1,312 @@
+{
+"situacionesARA" : [
+    {
+      "id": 1,
+      "escena": "ARA_FAL_1",
+      "arma": "FAL",
+      "imagen": "/api/assets/img/ARA_FAL_1",
+      "nombre": "Condición Nº 1",
+      "distancia": 150,
+      "postura": "Cuerpo a tierra con apoyo",
+      "blancos": [
+        {
+          "nombre": "Blanco 5 Zonas (NORAD)",
+          "imagen": "/api/assets/img/fig_1"
+        }
+      ],
+      "tiempo": "Sin límite",
+      "municionTotal": 5,
+      "exigencia": "Ningún tiro menor de 4 o un total de 21 puntos",
+      "procedimiento": null,
+      "detalles": "El Instructor debe verificar previamente el punto a apuntar del fusil"
+    },
+    {
+      "id": 2,
+      "escena": "ARA_FAL_2",
+      "arma": "FAL",
+      "imagen": "/api/assets/img/ARA_FAL_2",
+      "nombre": "Condición Nº 2",
+      "distancia": 150,
+      "postura": "Cuerpo a tierra sin apoyo",
+      "blancos": [
+        {
+          "nombre": "Blanco 5 Zonas (NORAD)",
+          "imagen": "/api/assets/img/fig_1"
+        }
+      ],
+      "tiempo": "Sin límite",
+      "municionTotal": 3,
+      "exigencia": "Tres impactos con un total de 11 puntos",
+      "procedimiento": null,
+      "detalles": null
+    },
+    {
+      "id": 3,
+      "escena": "ARA_FAL_3",
+      "arma": "FAL",
+      "imagen": "/api/assets/img/ARA_FAL_3",
+      "nombre": "Condición Nº 3",
+      "distancia": 20,
+      "postura": "De pie - Fusil a nivel de la cadera",
+      "blancos": [
+        {
+          "nombre": "Blanco 5 Zonas (NORAD)",
+          "imagen": "/api/assets/img/fig_1"
+        }
+      ],
+      "tiempo": "Sin límite",
+      "municionTotal": 5,
+      "exigencia": "3 impactos, 1 no menor a 4",
+      "procedimiento": null,
+      "detalles": null
+    },
+    {
+      "id": 4,
+      "escena": "ARA_FAL_4",
+      "arma": "FAL",
+      "imagen": "/api/assets/img/ARA_FAL_4",
+      "nombre": "Condición Nº 4",
+      "distancia": 150,
+      "postura": "Rodilla a Tierra",
+      "blancos": [
+        {
+          "nombre": "Blanco 5 Zonas (NORAD)",
+          "imagen": "/api/assets/img/fig_1"
+        }
+      ],
+      "tiempo": "Sin límite",
+      "municionTotal": 5,
+      "exigencia": "Cinco impactos, ninguno menor de 3 o un total de 16 puntos",
+      "procedimiento": null,
+      "detalles": null
+    },
+    {
+      "id": 5,
+      "escena": "ARA_FAL_5",
+      "arma": "FAL",
+      "imagen": "/api/assets/img/ARA_FAL_5",
+      "nombre": "Condición Nº 5",
+      "distancia": 150,
+      "postura": "De pie",
+      "blancos": [
+        {
+          "nombre": "Blanco 5 Zonas (NORAD)",
+          "imagen": "/api/assets/img/fig_1"
+        }
+      ],
+      "tiempo": "Sin límite",
+      "municionTotal": 3,
+      "exigencia": "Tres impactos, ninguno menor de 3 o un total de 10 puntos",
+      "procedimiento": null,
+      "detalles": null
+    },
+    {
+      "id": 6,
+      "escena": "ARA_FAL_6",
+      "arma": "FAL",
+      "imagen": "/api/assets/img/ARA_FAL_6",
+      "nombre": "Condición Nº 6",
+      "distancia": 200,
+      "postura": "Sentado",
+      "blancos": [
+        {
+          "nombre": "Blanco 6 Zonas (NORAD)",
+          "imagen": "/api/assets/img/fig_2"
+        }
+      ],
+      "tiempo": "Sin límite",
+      "municionTotal": 4,
+      "exigencia": "Cuatro impactos con un total de 15 puntos",
+      "procedimiento": null,
+      "detalles": null
+    },
+    {
+      "id": 7,
+      "escena": "ARA_FAL_7",
+      "arma": "FAL",
+      "imagen": "/api/assets/img/ARA_FAL_7",
+      "nombre": "Condición Nº 7",
+      "distancia": 300,
+      "postura": "Cuerpo a tierra sin apoyo",
+      "blancos": [
+        {
+          "nombre": "Blanco 6 Zonas (NORAD)",
+          "imagen": "/api/assets/img/fig_2"
+        }
+      ],
+      "tiempo": "Sin límite",
+      "municionTotal": 4,
+      "exigencia": "Cuatro impactos con un total de 14 puntos",
+      "procedimiento": null,
+      "detalles": null
+    },
+    {
+      "id": 8,
+      "escena": "ARA_FAL_8",
+      "arma": "FAL",
+      "imagen": "/api/assets/img/ARA_FAL_8",
+      "nombre": "Condición Nº 8",
+      "distancia": 20,
+      "postura": "De pie - Fusil a nivel de la cadera",
+      "blancos": [
+        {
+          "nombre": "Silueta de pie, (NORAD)",
+          "imagen": "/api/assets/img/fig_4"
+        },
+        {
+          "nombre": "Silueta rodilla a tierra, (NORAD)",
+          "imagen": "/api/assets/img/fig_5"
+        },
+        {
+          "nombre": "Silueta cuerpo a tierra, (NORAD)",
+          "imagen": "/api/assets/img/fig_6"
+        }
+      ],
+      "tiempo": "6",
+      "municionTotal": 5,
+      "exigencia": "Dos blancos batidos",
+      "procedimiento": "Tiro semiautomático",
+      "detalles": "Fusil cargado y en seguro"
+    },
+    {
+      "id": 9,
+      "escena": "ARA_pistola_1",
+      "arma": "Pistola",
+      "imagen": "/api/assets/img/ARA_pistola_1",
+      "nombre": "Condición Nº 1",
+      "distancia": 25,
+      "postura": "Sentado en mesa de reglaje con apoyo",
+      "blancos": [
+        {
+          "nombre": "Blanco 12 Zonas (NORAD)",
+          "imagen": "/api/assets/img/fig_3"
+        }
+      ],
+      "tiempo": "Sin límite",
+      "municionTotal": 3,
+      "exigencia": "3 impactos, ninguno inferior a 8",
+      "procedimiento": "Esta condición tiene por objeto iniciar al tirador en el adiestramiento de armas cortas con supervisión de instructor",
+      "detalles": null
+    },
+    {
+      "id": 10,
+      "escena": "ARA_pistola_2",
+      "arma": "Pistola",
+      "imagen": "/api/assets/img/ARA_pistola_2",
+      "nombre": "Condición Nº 2",
+      "distancia": 25,
+      "postura": "Doble empuñadura, Weber",
+      "blancos": [
+        {
+          "nombre": "Silueta de pie, (NORAD)",
+          "imagen": "/api/assets/img/fig_4"
+        }
+      ],
+      "tiempo": "Sin límite",
+      "municionTotal": 6,
+      "exigencia": "3 Impactos",
+      "procedimiento": null,
+      "detalles": null
+    },
+    {
+      "id": 11,
+      "escena": "ARA_pistola_3",
+      "arma": "Pistola",
+      "imagen": "/api/assets/img/ARA_pistola_3",
+      "nombre": "Condición Nº 3",
+      "distancia": 25,
+      "postura": "Doble empuñadura, Weber",
+      "blancos": [
+        {
+          "nombre": "Blanco 12 Zonas (NORAD)",
+          "imagen": "/api/assets/img/fig_3"
+        }
+      ],
+      "tiempo": "5",
+      "municionTotal": 5,
+      "exigencia": "5 Impactos con un total de 25 puntos",
+      "procedimiento": "El tirador está con el brazo levantado con las pistola vertical hacia arriba, cargada y en seguro para cada disparo se dispone de 5 segundos a contar de la voz de \"FUEGO LIBRE\"",
+      "detalles": "Con un impacto fuera del blanco, aunque totalice el puntaje, la condición no esta cumplida"
+    },
+    {
+      "id": 12,
+      "escena": "ARA_pistola_4",
+      "arma": "Pistola",
+      "imagen": "/api/assets/img/ARA_pistola_4",
+      "nombre": "Condición Nº 4",
+      "distancia": 50,
+      "postura": "Doble empuñadura, Weber",
+      "blancos": [
+        {
+          "nombre": "Silueta de pie, (NORAD)",
+          "imagen": "/api/assets/img/fig_4"
+        }
+      ],
+      "tiempo": "Sin límite",
+      "municionTotal": 6,
+      "exigencia": "2 Impactos",
+      "procedimiento": null,
+      "detalles": null
+    },
+    {
+      "id": 13,
+      "escena": "ARA_pistola_5",
+      "arma": "Pistola",
+      "imagen": "/api/assets/img/ARA_pistola_5",
+      "nombre": "Condición Nº 5",
+      "distancia": 25,
+      "postura": "Doble empuñadura, Weber",
+      "blancos": [
+        {
+          "nombre": "Silueta de pie, (NORAD)",
+          "imagen": "/api/assets/img/fig_4"
+        }
+      ],
+      "tiempo": "15",
+      "municionTotal": 5,
+      "exigencia": "3 Impactos",
+      "procedimiento": "El tirador con la pistola vertical hacia arriba, cargada y en seguro. El tirador da el “LISTO”. A partir de la voz de “FUEGO LIBRE” tiene 15 segundos para disparar los 5 tiros.",
+      "detalles": "Si no se ejecutan todos los disparos en el tiempo reglamentario, la condición no está cumplida."
+    },
+    {
+      "id": 14,
+      "escena": "ARA_pistola_6",
+      "arma": "Pistola",
+      "imagen": "/api/assets/img/ARA_pistola_6",
+      "nombre": "Condición Nº 6",
+      "distancia": 8,
+      "postura": "De pie - Pistola a nivel de la cadera",
+      "blancos": [
+        {
+          "nombre": "Silueta de pie, (NORAD)",
+          "imagen": "/api/assets/img/fig_4"
+        }
+      ],
+      "tiempo": "12",
+      "municionTotal": 5,
+      "exigencia": "2 Impactos",
+      "procedimiento": "El tirador con la pistola a nivel de la cadera, cargada y en seguro, da el \"LISTO\". A la voz de \"FUEGO LIBRE\" saca seguro y hace fuego.",
+      "detalles": "Si no se ejecutan todos los disparos en el tiempo reglamentario, la condición no está cumplida."
+    },
+    {
+      "id": 15,
+      "escena": "ARA_pistola_7",
+      "arma": "Pistola",
+      "imagen": "/api/assets/img/ARA_pistola_7",
+      "nombre": "Condición Nº 7",
+      "distancia": 8,
+      "postura": "De pie - Pistola a nivel de la cadera",
+      "blancos": [
+        {
+          "nombre": "Silueta de pie, (NORAD)",
+          "imagen": "/api/assets/img/fig_4"
+        }
+      ],
+      "tiempo": "15",
+      "municionTotal": 7,
+      "exigencia": "2 siluetas batidas",
+      "procedimiento": "El tirador con la pistola a nivel de la cadera, cargada y en seguro, da el \"LISTO\". A la voz de \"FUEGO LIBRE\" saca seguro y hace fuego",
+      "detalles": "Si no se ejecutan todos los impactos en el tiempo reglamentario, la condición no esta cumplida."
+    }
+  ]
+}

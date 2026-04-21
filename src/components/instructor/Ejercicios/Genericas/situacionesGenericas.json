@@ -1,0 +1,295 @@
+{
+  "situaciones": [
+    {
+      "id": 1,
+      "nombre": "Situación Libre en Bosque",
+      "descripcion": "Ejercicio sin restricciones situado en un bosque.",
+      "categoria": "Libre",
+      "tiposBlancos": "Figura FBI, Latas",
+      "imagen": "https://img.freepik.com/fotos-premium/campo-tiro-bosque-verano-cielo-abierto-objetivos-fondo_254257-255.jpg",
+      "nombreEscena": "Libre_1",
+      "habilidades": [
+        {
+          "nombre": "Situación Libre",
+          "descripcion": "Permite parametrizar libremente una situación de tiro sin restricciones predefinidas.",
+          "color": "gold"
+        },
+        {
+          "nombre": "Adaptabilidad",
+          "descripcion": "Capacidad de ajustar la técnica de tiro según las condiciones del entorno natural.",
+          "color": "green"
+        }
+      ],
+      "blancos": [
+        {
+          "nombre": "Figura FBI",
+          "imagen": "/src/assets/blancos/fbi.png"
+        },
+        {
+          "nombre": "Latas",
+          "imagen": "/src/assets/blancos/latas.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Blanco Móvil lento 1",
+      "descripcion": "Situación con un blanco FBI moviendose horizontalmente lento sobre una pared.",
+      "categoria": "Blancos Móviles",
+      "tiposBlancos": "Figura FBI",
+      "imagen": "https://lh6.googleusercontent.com/proxy/Tm0wTdoC2wBL241N19LfHFUw--wO-LV0Zr5zpGmzbjdNhCj0SXNyWf4IIavkVVHO0795XYTfieZXCA3nKoeZfMy59aHOEp18vOgtI-U0NU6_",
+      "nombreEscena": "Libre_2",
+      "habilidades": [
+        {
+          "nombre": "Blanco Móvil",
+          "descripcion": "Desarrolla habilidades de seguimiento y reacción ante objetivos en movimiento.",
+          "color": "gold"
+        },
+        {
+          "nombre": "Precisión bajo Presión",
+          "descripcion": "Mantener la precisión en situaciones de estrés con objetivos en movimiento.",
+          "color": "red"
+        }
+      ],
+      "blancos": [
+        {
+          "nombre": "Figura FBI",
+          "imagen": "/src/assets/blancos/fbi.png"
+        }
+      ],
+      "etiquetas": ["Horizontal", "Lento"]
+    },
+    {
+      "id": 3,
+      "nombre": "Blanco Móvil lento 2",
+      "descripcion": "Situación con un blanco FBI moviendose verticalmente lento sobre una pared.",
+      "categoria": "Blancos Móviles",
+      "tiposBlancos": "Figura FBI",
+      "imagen": "https://lh6.googleusercontent.com/proxy/Tm0wTdoC2wBL241N19LfHFUw--wO-LV0Zr5zpGmzbjdNhCj0SXNyWf4IIavkVVHO0795XYTfieZXCA3nKoeZfMy59aHOEp18vOgtI-U0NU6_",
+      "nombreEscena": "Libre_4",
+      "habilidades": [
+        {
+          "nombre": "Blanco Móvil",
+          "descripcion": "Desarrolla habilidades de seguimiento y reacción ante objetivos en movimiento.",
+          "color": "gold"
+        },
+        {
+          "nombre": "Precisión bajo Presión",
+          "descripcion": "Mantener la precisión en situaciones de estrés con objetivos en movimiento.",
+          "color": "red"
+        }
+      ],
+      "blancos": [
+        {
+          "nombre": "Figura FBI",
+          "imagen": "/src/assets/blancos/fbi.png"
+        }
+      ],
+      "etiquetas": ["Vertical", "Lento"]
+    },
+    {
+      "id": 4,
+      "nombre": "Blanco Móvil lento 3",
+      "descripcion": "Situación con una figura moviendose horizontalmente lenta sobre una pared.",
+      "categoria": "Blancos Móviles",
+      "tiposBlancos": "Figura 4",
+      "imagen": "https://lh6.googleusercontent.com/proxy/Tm0wTdoC2wBL241N19LfHFUw--wO-LV0Zr5zpGmzbjdNhCj0SXNyWf4IIavkVVHO0795XYTfieZXCA3nKoeZfMy59aHOEp18vOgtI-U0NU6_",
+      "nombreEscena": "Libre_6",
+      "habilidades": [
+        {
+          "nombre": "Blanco Móvil",
+          "descripcion": "Desarrolla habilidades de seguimiento y reacción ante objetivos en movimiento.",
+          "color": "gold"
+        },
+        {
+          "nombre": "Precisión bajo Presión",
+          "descripcion": "Mantener la precisión en situaciones de estrés con objetivos en movimiento.",
+          "color": "red"
+        }
+      ],
+      "blancos": [
+        {
+          "nombre": "Figura 4",
+          "imagen": "/src/assets/blancos/fig_4.png"
+        }
+      ],
+      "etiquetas": ["Horizontal", "Lento"]
+    },
+    {
+      "id": 5,
+      "nombre": "Blanco Móvil lento 4",
+      "descripcion": "Situación con una figura moviendose verticalmente lenta sobre una pared.",
+      "categoria": "Blancos Móviles",
+      "tiposBlancos": "Figura 4",
+      "imagen": "https://lh6.googleusercontent.com/proxy/Tm0wTdoC2wBL241N19LfHFUw--wO-LV0Zr5zpGmzbjdNhCj0SXNyWf4IIavkVVHO0795XYTfieZXCA3nKoeZfMy59aHOEp18vOgtI-U0NU6_",
+      "nombreEscena": "Libre_8",
+      "habilidades": [
+        {
+          "nombre": "Blanco Móvil",
+          "descripcion": "Desarrolla habilidades de seguimiento y reacción ante objetivos en movimiento.",
+          "color": "gold"
+        },
+        {
+          "nombre": "Precisión bajo Presión",
+          "descripcion": "Mantener la precisión en situaciones de estrés con objetivos en movimiento.",
+          "color": "red"
+        }
+      ],
+      "blancos": [
+        {
+          "nombre": "Figura 4",
+          "imagen": "/src/assets/blancos/fig_4.png"
+        }
+      ],
+      "etiquetas": ["Vertical", "Lento"]
+    },
+    {
+      "id": 6,
+      "nombre": "Blanco Móvil rápido 1",
+      "descripcion": "Situación con un blanco FBI moviendose horizontalmente rápido sobre una pared.",
+      "categoria": "Blancos Móviles",
+      "tiposBlancos": "Figura FBI",
+      "imagen": "https://lh6.googleusercontent.com/proxy/Tm0wTdoC2wBL241N19LfHFUw--wO-LV0Zr5zpGmzbjdNhCj0SXNyWf4IIavkVVHO0795XYTfieZXCA3nKoeZfMy59aHOEp18vOgtI-U0NU6_",
+      "nombreEscena": "Libre_3",
+      "habilidades": [
+        {
+          "nombre": "Blanco Móvil",
+          "descripcion": "Desarrolla habilidades de seguimiento y reacción ante objetivos en movimiento.",
+          "color": "gold"
+        },
+        {
+          "nombre": "Precisión bajo Presión",
+          "descripcion": "Mantener la precisión en situaciones de estrés con objetivos en movimiento.",
+          "color": "red"
+        }
+      ],
+      "blancos": [
+        {
+          "nombre": "Figura FBI",
+          "imagen": "/src/assets/blancos/fbi.png"
+        }
+      ],
+      "etiquetas": ["Horizontal", "Rapido"]
+    },
+    {
+      "id": 7,
+      "nombre": "Blanco Móvil rápido 2",
+      "descripcion": "Situación con un blanco FBI moviendose verticalmente rápido sobre una pared.",
+      "categoria": "Blancos Móviles",
+      "tiposBlancos": "Figura FBI",
+      "imagen": "https://lh6.googleusercontent.com/proxy/Tm0wTdoC2wBL241N19LfHFUw--wO-LV0Zr5zpGmzbjdNhCj0SXNyWf4IIavkVVHO0795XYTfieZXCA3nKoeZfMy59aHOEp18vOgtI-U0NU6_",
+      "nombreEscena": "Libre_5",
+      "habilidades": [
+        {
+          "nombre": "Blanco Móvil",
+          "descripcion": "Desarrolla habilidades de seguimiento y reacción ante objetivos en movimiento.",
+          "color": "gold"
+        },
+        {
+          "nombre": "Precisión bajo Presión",
+          "descripcion": "Mantener la precisión en situaciones de estrés con objetivos en movimiento.",
+          "color": "red"
+        }
+      ],
+      "blancos": [
+        {
+          "nombre": "Figura FBI",
+          "imagen": "/src/assets/blancos/fbi.png"
+        }
+      ],
+      "etiquetas": ["Vertical", "Rapido"]
+    },
+    {
+      "id": 8,
+      "nombre": "Blanco Móvil rápido 3",
+      "descripcion": "Situación con una figura moviendose horizontalmente rápida sobre una pared.",
+      "categoria": "Blancos Móviles",
+      "tiposBlancos": "Figura 4",
+      "imagen": "https://lh6.googleusercontent.com/proxy/Tm0wTdoC2wBL241N19LfHFUw--wO-LV0Zr5zpGmzbjdNhCj0SXNyWf4IIavkVVHO0795XYTfieZXCA3nKoeZfMy59aHOEp18vOgtI-U0NU6_",
+      "nombreEscena": "Libre_7",
+      "habilidades": [
+        {
+          "nombre": "Blanco Móvil",
+          "descripcion": "Desarrolla habilidades de seguimiento y reacción ante objetivos en movimiento.",
+          "color": "gold"
+        },
+        {
+          "nombre": "Precisión bajo Presión",
+          "descripcion": "Mantener la precisión en situaciones de estrés con objetivos en movimiento.",
+          "color": "red"
+        }
+      ],
+      "blancos": [
+        {
+          "nombre": "Figura 4",
+          "imagen": "/src/assets/blancos/fig_4.png"
+        }
+      ],
+      "etiquetas": ["Horizontal", "Rapido"]
+    },
+    {
+      "id": 9,
+      "nombre": "Blanco Móvil rápido 4",
+      "descripcion": "Situación con una figura moviendose verticalmente rápida sobre una pared.",
+      "categoria": "Blancos Móviles",
+      "tiposBlancos": "Figura 4",
+      "imagen": "https://lh6.googleusercontent.com/proxy/Tm0wTdoC2wBL241N19LfHFUw--wO-LV0Zr5zpGmzbjdNhCj0SXNyWf4IIavkVVHO0795XYTfieZXCA3nKoeZfMy59aHOEp18vOgtI-U0NU6_",
+      "nombreEscena": "Libre_9",
+      "habilidades": [
+        {
+          "nombre": "Blanco Móvil",
+          "descripcion": "Desarrolla habilidades de seguimiento y reacción ante objetivos en movimiento.",
+          "color": "gold"
+        },
+        {
+          "nombre": "Precisión bajo Presión",
+          "descripcion": "Mantener la precisión en situaciones de estrés con objetivos en movimiento.",
+          "color": "red"
+        }
+      ],
+      "blancos": [
+        {
+          "nombre": "Figura 4",
+          "imagen": "/src/assets/blancos/fig_4.png"
+        }
+      ],
+      "etiquetas": ["Vertical", "Rapido"]
+    },
+    {
+      "id": 10,
+      "nombre": "Defensa Estática",
+      "descripcion": "Defensa estática contra oleadas de amenazas entrantes.",
+      "categoria": "Blancos Fijos",
+      "tiposBlancos": "Figuras Silueta, Figuras Cuadradas",
+      "imagen": "https://covernews.press/wp-content/uploads/2019/09/poligono-300x169.jpg",
+      "nombreEscena": "escena_defensa_estatica"
+    },
+    {
+      "id": 11,
+      "nombre": "Tiro de Precisión Estático",
+      "descripcion": "Ejercicio de precisión con blancos fijos a diferentes distancias.",
+      "categoria": "Blancos Fijos",
+      "tiposBlancos": "Figuras Circulares",
+      "imagen": "https://covernews.press/wp-content/uploads/2019/09/poligono-300x169.jpg",
+      "nombreEscena": "escena_precision_estatica"
+    },
+    {
+      "id": 12,
+      "nombre": "Rescate Táctico",
+      "descripcion": "Misión de rescate con tiempo limitado y objetivos prioritarios.",
+      "categoria": "Laberinto",
+      "tiposBlancos": "Figuras Silueta",
+      "imagen": "https://covernews.press/wp-content/uploads/2019/09/poligono-300x169.jpg",
+      "nombreEscena": "escena_rescate_tactico"
+    },
+    {
+      "id": 13,
+      "nombre": "Corredor de Obstáculos",
+      "descripcion": "Navegación por laberinto con amenazas ocultas y objetivos sorpresa.",
+      "categoria": "Laberinto",
+      "tiposBlancos": "Figuras Silueta, Figuras Circulares",
+      "imagen": "https://covernews.press/wp-content/uploads/2019/09/poligono-300x169.jpg",
+      "nombreEscena": "escena_corredor_obstaculos"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+.connectionButtonWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.iconButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.iconButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estados de conexión */
+.iconButton.connected .navIcon {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.iconButton.disconnected .navIcon {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.iconButton.disconnected:hover .navIcon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.97) 0%, rgba(15, 23, 42, 0.97) 100%);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 0.625rem 0.875rem;
+  border-radius: 0.5rem;
+  font-size: var(--font-size-xs);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  z-index: 100;
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-bottom-color: rgba(30, 41, 59, 0.97);
+}
+
+.connectionButtonWrapper:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(2px);
+}
+
+.tooltipStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tooltipTitle {
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.01em;
+}
+
+.statusDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.statusDotConnected {
+  background-color: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.statusDotDisconnected {
+  background-color: #6b7280;
+  opacity: 0.7;
+}
+
+.tooltipIp {
+  font-family: monospace;
+  font-size: var(--font-size-xs);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.25rem;
+  padding-top: 0.375rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.15);
+  }
+}

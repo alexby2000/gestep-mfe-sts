@@ -1,0 +1,384 @@
+.container {
+  width: 100%;
+  height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.025em;
+  padding-left: 1rem;
+  border-left: 4px solid #3b82f6;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.08) 0%, transparent 100%);
+  border-radius: 0 0.375rem 0.375rem 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.discoverButton,
+.alignButton,
+.testButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+  width: 200px;
+}
+
+.buttonIcon {
+  flex-shrink: 0;
+}
+
+.discoverButton {
+  background-color: #3b82f6;
+}
+
+.discoverButton:hover:not(:disabled) {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3);
+}
+
+.discoverButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.alignButton {
+  background-color: #3b82f6;
+}
+
+.alignButton:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(5, 150, 105, 0.3);
+}
+
+.testButton {
+  background-color: #f59e0b;
+}
+
+.testButton:hover:not(:disabled) {
+  background-color: #d97706;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(217, 119, 6, 0.3);
+}
+
+.testButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Header de armas vinculadas */
+.weaponsHeader {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.weaponsTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.weaponsCount {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: #3b82f6;
+  margin-left: 0.25rem;
+}
+
+/* Grid de armas */
+.weaponsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 0.5rem 0 0 0;
+  max-height: calc(100vh - 14rem);
+  overflow-y: auto;
+}
+
+.weaponsGrid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.weaponsGrid::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+  border-radius: 4px;
+}
+
+.weaponsGrid::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+.weaponsGrid::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* Loading State */
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.loadingIcon {
+  color: #3b82f6;
+  margin-bottom: 2rem;
+  animation: spin 1s linear infinite;
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.3));
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.025em;
+}
+
+.loadingDescription {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin: 0;
+  max-width: 32rem;
+  line-height: 1.6;
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.emptyIcon {
+  color: var(--color-text-tertiary);
+  margin-bottom: 1rem;
+}
+
+.emptyTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.emptyDescription {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+  max-width: 28rem;
+}
+
+/* Modales */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-modal-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background-color: var(--color-modal-bg);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px var(--color-shadow-lg);
+  width: 90%;
+  max-width: 32rem;
+  animation: slideUp 0.2s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modalTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  border-radius: 0.375rem;
+  transition: all 0.2s;
+}
+
+.closeButton:hover {
+  background-color: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.modalBody {
+  padding: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-input-border);
+  border-radius: 0.5rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-input-text);
+  background-color: var(--color-input-bg);
+  transition: all 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.saveButton {
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  background-color: #3b82f6;
+  color: white;
+}
+
+.saveButton:hover {
+  background-color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .discoverButton,
+  .alignButton,
+  .testButton {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .weaponsGrid {
+    grid-template-columns: 1fr;
+  }
+}

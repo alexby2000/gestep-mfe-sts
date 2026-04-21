@@ -1,0 +1,78 @@
+.navbar {
+  padding: 0.75rem 1.5rem; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-navbar-text);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-navbar-bg);
+}
+
+.primary {
+  background-color: var(--color-navbar-bg);
+}
+
+.success {
+  background-color: var(--color-navbar-bg);
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.roleIcon {
+  width: 2rem;
+  height: 2rem;
+  margin-left: -0.5rem;
+  flex-shrink: 0;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+}
+
+.title {
+  font-size: var(--font-size-lg);  
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: var(--font-size-xs);  
+  margin: 0;
+  opacity: 0.9;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+
+  .title {
+    font-size: var(--font-size-base);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-xs);
+  }
+}

@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+}
+
+.title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: #111827;
+  margin: 0 0 2rem 0;
+  letter-spacing: -0.025em;
+}
+
+.placeholder {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  text-align: center;
+  border: 2px dashed #e5e7eb;
+}
+
+.placeholder p {
+  color: #6b7280;
+  font-size: var(--font-size-lg);
+  margin: 0;
+}

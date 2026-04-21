@@ -1,0 +1,281 @@
+.wrapper {
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tableRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tableRow::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.tableRow:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+.tableRow:hover::before {
+  transform: scaleY(1);
+}
+
+.tableRow.animating {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Contenedor de imagen */
+.imageContainer {
+  width: 180px;
+  height: 120px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+
+.blancoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.blancoImage.carousel {
+  animation: fadeInImage 0.5s ease-in-out;
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tableRow:hover .blancoImage {
+  transform: scale(1.05);
+}
+
+/* Indicadores de carrusel */
+.carouselIndicators {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.375rem;
+  z-index: 10;
+}
+
+.indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.indicator.active {
+  background: white;
+  width: 20px;
+  border-radius: 3px;
+}
+
+/* Contenedor de contenido */
+.contentContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+/* Badge del arma */
+.armaBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.armaBadge.pistola {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+.armaBadge.fusil {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+}
+
+/* Título */
+.title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Descripción (exigencia) */
+.description {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Barra de estadísticas */
+.statsBar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.stat svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Botón de info */
+.infoButton {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.infoButton:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.5);
+  color: #3b82f6;
+  transform: scale(1.1);
+}
+
+/* Tema oscuro */
+[data-theme="dark"] .tableRow {
+  background: #1a1d24;
+}
+
+[data-theme="dark"] .imageContainer {
+  background: #0f1117;
+  border-color: #2d3748;
+}
+
+[data-theme="dark"] .infoButton {
+  background: #0f1117;
+  border-color: #2d3748;
+}
+
+[data-theme="dark"] .infoButton:hover {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tableRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .imageContainer {
+    width: 100%;
+    height: 150px;
+  }
+
+  .statsBar {
+    gap: 1rem;
+  }
+
+  .infoButton {
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,204 @@
+/* Tarjeta de arma rediseñada */
+.weaponCard {
+  background: var(--color-card-bg);
+  border: 2px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.weaponCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.weaponCard:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+  transform: translateY(-4px);
+}
+
+.weaponCard:hover::before {
+  transform: scaleX(1);
+}
+
+/* Header de la card con ícono horizontal */
+.weaponHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.weaponIconLarge {
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 0.875rem 0.875rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.weaponCard:hover .weaponIconLarge {
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.45);
+}
+
+.weaponSvg {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.editButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+}
+
+.editButton:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.08);
+}
+
+/* Info section con nombre y tipo */
+.weaponInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding: 1.25rem 1.75rem 0 1.75rem;
+}
+
+.weaponTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.weaponBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(37, 99, 235, 0.08) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 2rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #3b82f6;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  width: fit-content;
+}
+
+/* Body de la card */
+.weaponBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0 1.75rem 1.75rem 1.75rem;
+}
+
+[data-theme="dark"] .weaponBadge {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.18) 0%, rgba(37, 99, 235, 0.12) 100%);
+  border-color: rgba(59, 130, 246, 0.35);
+  color: #60a5fa;
+}
+
+/* Propiedades del arma */
+.weaponProperties {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.propertyItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.propertyIcon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+
+.propertyContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.propertyLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.propertyValueMac {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+.propertyValue {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Grid de offsets */
+.offsetGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
