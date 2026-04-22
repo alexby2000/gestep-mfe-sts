@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   const isProd = mode === 'production'
 
   return {
-    base: isProd ? '/gestep/mfe/sts/' : '/',
+    base: isProd ? '/mfe/sts/' : '/',
     plugins: [
       react(),
       federation({
